@@ -7,13 +7,13 @@
 // @updateURL      https://github.com/Ciriol/iitc_ign_layer/raw/master/basemap-ign.meta.js
 // @downloadURL    https://github.com/Ciriol/iitc_ign_layer/raw/master/basemap-ign.user.js
 // @description    Add the IGN map tiles as an optional layer.
-// @include        https://ingress.com/intel*
-// @include        http://ingress.com/intel*
-// @match          https://ingress.com/intel*
-// @match          http://ingress.com/intel*
-// @include        https://ingress.com/mission/*
-// @include        http://ingress.com/mission/*
-// @match          https://ingress.com/mission/*
-// @match          http://ingress.com/mission/*
+// @include        https://www.ingress.com/intel*
+// @include        https://www.ingress.com/intel*
+// @match          https://www.ingress.com/intel*
+// @match          https://www.ingress.com/intel*
+// @include        https://www.ingress.com/intel*
+// @include        https://www.ingress.com/intel*
+// @match          https://www.ingress.com/intel*
+// @match          https://www.ingress.com/intel*
 // @grant          none
 // ==/UserScript==
