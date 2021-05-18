@@ -2,11 +2,11 @@
 // @name           IITC plugin: IGN map tiles
 // @id             iitc-plugin-basemap-ign
 // @category       Map Tiles
-// @version        0.4
+// @version        0.5
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
-// @updateURL      https://github.com/Ciriol/iitc_ign_layer/raw/master/basemap-ign.meta.js
-// @downloadURL    https://github.com/Ciriol/iitc_ign_layer/raw/master/basemap-ign.user.js
-// @description    Add the IGN map tiles as an optional layer.
+// @updateURL      https://github.com/Guschtel/iitc_ign_layer/raw/master/basemap-ign.meta.js
+// @downloadURL    https://github.com/Guschtel/iitc_ign_layer/raw/master/basemap-ign.user.js
+// @description    Add the IGN map tiles as an optional layer. Modified by @Guschtel Original Code from https://github.com/Ciriol/iitc_ign_layer
 // @include        https://intel.ingress.com/intel*
 // @include        https://intel.ingress.com/intel*
 // @match          https://intel.ingress.com/intel*
@@ -37,6 +37,9 @@ function wrapper(plugin_info) {
         	The capabilities can be enumerated for each API key.
 
         */
+
+        //
+
         var geoportailConfig = {
             // url of the services
             url: "//wxs.ign.fr/",
@@ -55,8 +58,263 @@ function wrapper(plugin_info) {
                         "bbox": [-178.187, -84, 178, 84],
                         originators: {}
                     },
-
                     "GEOGRAPHICALGRIDSYSTEMS.MAPS": {
+                        "title": "Cartes IGN",
+                        "order": "9980000",
+                        "format": "image/jpeg",
+                        "tilematrix": "PM",
+                        "style": "normal",
+                        "minZoom": 0,
+                        "maxZoom": 18,
+                        "bbox": [-180, -68.138855, 180, 80],
+                        "desc": "Cartes IGN",
+                        "keys": "Cartes",
+                        "qlook": "http://wxs.ign.fr/static/pictures/ign_carte2.jpg",
+                        "legend": [],
+                        "originators": {
+                            "IGN": {
+                                "href": "http://www.ign.fr",
+                                "attribution": "Institut national de l'information géographique et forestière",
+                                "logo": "http://wxs.ign.fr/static/logos/IGN/IGN.gif",
+                                "minZoom": 0,
+                                "maxZoom": 18,
+                                "constraint": [{
+                                    "minZoom": 18,
+                                    "maxZoom": 18,
+                                    "bbox": [-63.189068, -21.428364, 55.846638, 50.930748]
+                                }, {
+                                    "minZoom": 17,
+                                    "maxZoom": 17,
+                                    "bbox": [-63.189117, -21.428364, 55.84698, 50.930748]
+                                }, {
+                                    "minZoom": 0,
+                                    "maxZoom": 6,
+                                    "bbox": [-180, -60, 180, 80]
+                                }, {
+                                    "minZoom": 7,
+                                    "maxZoom": 8,
+                                    "bbox": [-178.20573, -68.138855, 144.84375, 51.909786]
+                                }, {
+                                    "minZoom": 13,
+                                    "maxZoom": 13,
+                                    "bbox": [-178.20573, -46.51099, 77.60037, 51.161537]
+                                }, {
+                                    "minZoom": 14,
+                                    "maxZoom": 14,
+                                    "bbox": [-178.20573, -46.502903, 77.60037, 51.161537]
+                                }, {
+                                    "minZoom": 12,
+                                    "maxZoom": 12,
+                                    "bbox": [-178.20573, -46.51099, 77.60037, 51.111763]
+                                }, {
+                                    "minZoom": 11,
+                                    "maxZoom": 11,
+                                    "bbox": [-178.20573, -46.68384, 77.60037, 51.111763]
+                                }, {
+                                    "minZoom": 9,
+                                    "maxZoom": 10,
+                                    "bbox": [-178.20573, -68.138855, 144.84375, 51.25205]
+                                }, {
+                                    "minZoom": 15,
+                                    "maxZoom": 16,
+                                    "bbox": [-178.20573, -46.502903, 77.60037, 50.930748]
+                                }]
+                            }
+                        }
+                    },
+                    "GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD": {
+                        "title": "Cartes IGN",
+                        "order": "9980000",
+                        "format": "image/jpeg",
+                        "tilematrix": "PM",
+                        "style": "normal",
+                        "minZoom": 0,
+                        "maxZoom": 18,
+                        "bbox": [-180, -68.138855, 180, 80],
+                        "desc": "Cartes IGN",
+                        "keys": "Cartes",
+                        "qlook": "http://wxs.ign.fr/static/pictures/ign_carte2.jpg",
+                        "legend": [],
+                        "originators": {
+                            "IGN": {
+                                "href": "http://www.ign.fr",
+                                "attribution": "Institut national de l'information géographique et forestière",
+                                "logo": "http://wxs.ign.fr/static/logos/IGN/IGN.gif",
+                                "minZoom": 0,
+                                "maxZoom": 18,
+                                "constraint": [{
+                                    "minZoom": 18,
+                                    "maxZoom": 18,
+                                    "bbox": [-63.189068, -21.428364, 55.846638, 50.930748]
+                                }, {
+                                    "minZoom": 17,
+                                    "maxZoom": 17,
+                                    "bbox": [-63.189117, -21.428364, 55.84698, 50.930748]
+                                }, {
+                                    "minZoom": 0,
+                                    "maxZoom": 6,
+                                    "bbox": [-180, -60, 180, 80]
+                                }, {
+                                    "minZoom": 7,
+                                    "maxZoom": 8,
+                                    "bbox": [-178.20573, -68.138855, 144.84375, 51.909786]
+                                }, {
+                                    "minZoom": 13,
+                                    "maxZoom": 13,
+                                    "bbox": [-178.20573, -46.51099, 77.60037, 51.161537]
+                                }, {
+                                    "minZoom": 14,
+                                    "maxZoom": 14,
+                                    "bbox": [-178.20573, -46.502903, 77.60037, 51.161537]
+                                }, {
+                                    "minZoom": 12,
+                                    "maxZoom": 12,
+                                    "bbox": [-178.20573, -46.51099, 77.60037, 51.111763]
+                                }, {
+                                    "minZoom": 11,
+                                    "maxZoom": 11,
+                                    "bbox": [-178.20573, -46.68384, 77.60037, 51.111763]
+                                }, {
+                                    "minZoom": 9,
+                                    "maxZoom": 10,
+                                    "bbox": [-178.20573, -68.138855, 144.84375, 51.25205]
+                                }, {
+                                    "minZoom": 15,
+                                    "maxZoom": 16,
+                                    "bbox": [-178.20573, -46.502903, 77.60037, 50.930748]
+                                }]
+                            }
+                        }
+                    },
+                    "GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.CLASSIQUE": {
+                        "title": "Cartes IGN",
+                        "order": "9980000",
+                        "format": "image/jpeg",
+                        "tilematrix": "PM",
+                        "style": "normal",
+                        "minZoom": 0,
+                        "maxZoom": 18,
+                        "bbox": [-180, -68.138855, 180, 80],
+                        "desc": "Cartes IGN",
+                        "keys": "Cartes",
+                        "qlook": "http://wxs.ign.fr/static/pictures/ign_carte2.jpg",
+                        "legend": [],
+                        "originators": {
+                            "IGN": {
+                                "href": "http://www.ign.fr",
+                                "attribution": "Institut national de l'information géographique et forestière",
+                                "logo": "http://wxs.ign.fr/static/logos/IGN/IGN.gif",
+                                "minZoom": 0,
+                                "maxZoom": 18,
+                                "constraint": [{
+                                    "minZoom": 18,
+                                    "maxZoom": 18,
+                                    "bbox": [-63.189068, -21.428364, 55.846638, 50.930748]
+                                }, {
+                                    "minZoom": 17,
+                                    "maxZoom": 17,
+                                    "bbox": [-63.189117, -21.428364, 55.84698, 50.930748]
+                                }, {
+                                    "minZoom": 0,
+                                    "maxZoom": 6,
+                                    "bbox": [-180, -60, 180, 80]
+                                }, {
+                                    "minZoom": 7,
+                                    "maxZoom": 8,
+                                    "bbox": [-178.20573, -68.138855, 144.84375, 51.909786]
+                                }, {
+                                    "minZoom": 13,
+                                    "maxZoom": 13,
+                                    "bbox": [-178.20573, -46.51099, 77.60037, 51.161537]
+                                }, {
+                                    "minZoom": 14,
+                                    "maxZoom": 14,
+                                    "bbox": [-178.20573, -46.502903, 77.60037, 51.161537]
+                                }, {
+                                    "minZoom": 12,
+                                    "maxZoom": 12,
+                                    "bbox": [-178.20573, -46.51099, 77.60037, 51.111763]
+                                }, {
+                                    "minZoom": 11,
+                                    "maxZoom": 11,
+                                    "bbox": [-178.20573, -46.68384, 77.60037, 51.111763]
+                                }, {
+                                    "minZoom": 9,
+                                    "maxZoom": 10,
+                                    "bbox": [-178.20573, -68.138855, 144.84375, 51.25205]
+                                }, {
+                                    "minZoom": 15,
+                                    "maxZoom": 16,
+                                    "bbox": [-178.20573, -46.502903, 77.60037, 50.930748]
+                                }]
+                            }
+                        }
+                    },
+                    "GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2": {
+                        "title": "Cartes IGN",
+                        "order": "9980000",
+                        "format": "image/png",
+                        "tilematrix": "PM",
+                        "style": "normal",
+                        "minZoom": 0,
+                        "maxZoom": 18,
+                        "bbox": [-180, -68.138855, 180, 80],
+                        "desc": "Cartes IGN",
+                        "keys": "Cartes",
+                        "qlook": "http://wxs.ign.fr/static/pictures/ign_carte2.jpg",
+                        "legend": [],
+                        "originators": {
+                            "IGN": {
+                                "href": "http://www.ign.fr",
+                                "attribution": "Institut national de l'information géographique et forestière",
+                                "logo": "http://wxs.ign.fr/static/logos/IGN/IGN.gif",
+                                "minZoom": 0,
+                                "maxZoom": 18,
+                                "constraint": [{
+                                    "minZoom": 18,
+                                    "maxZoom": 18,
+                                    "bbox": [-63.189068, -21.428364, 55.846638, 50.930748]
+                                }, {
+                                    "minZoom": 17,
+                                    "maxZoom": 17,
+                                    "bbox": [-63.189117, -21.428364, 55.84698, 50.930748]
+                                }, {
+                                    "minZoom": 0,
+                                    "maxZoom": 6,
+                                    "bbox": [-180, -60, 180, 80]
+                                }, {
+                                    "minZoom": 7,
+                                    "maxZoom": 8,
+                                    "bbox": [-178.20573, -68.138855, 144.84375, 51.909786]
+                                }, {
+                                    "minZoom": 13,
+                                    "maxZoom": 13,
+                                    "bbox": [-178.20573, -46.51099, 77.60037, 51.161537]
+                                }, {
+                                    "minZoom": 14,
+                                    "maxZoom": 14,
+                                    "bbox": [-178.20573, -46.502903, 77.60037, 51.161537]
+                                }, {
+                                    "minZoom": 12,
+                                    "maxZoom": 12,
+                                    "bbox": [-178.20573, -46.51099, 77.60037, 51.111763]
+                                }, {
+                                    "minZoom": 11,
+                                    "maxZoom": 11,
+                                    "bbox": [-178.20573, -46.68384, 77.60037, 51.111763]
+                                }, {
+                                    "minZoom": 9,
+                                    "maxZoom": 10,
+                                    "bbox": [-178.20573, -68.138855, 144.84375, 51.25205]
+                                }, {
+                                    "minZoom": 15,
+                                    "maxZoom": 16,
+                                    "bbox": [-178.20573, -46.502903, 77.60037, 50.930748]
+                                }]
+                            }
+                        }
+                    },
+                    "ORTHOIMAGERY.ORTHOPHOTOS": {
                         "title": "Cartes IGN",
                         "order": "9980000",
                         "format": "image/jpeg",
@@ -126,7 +384,7 @@ function wrapper(plugin_info) {
 
         /** Jquery autoconf
         	key			{String} the API key
-        	success		{function} a collaback function
+        	success		{function} a collback function
         */
         geoportailConfig.jqautoconf = function(key, success, all) {
             var geopresolutions = [156543.03390625, 78271.516953125, 39135.7584765625, 19567.87923828125, 9783.939619140625, 4891.9698095703125, 2445.9849047851562, 1222.9924523925781, 611.4962261962891, 305.74811309814453, 152.87405654907226, 76.43702827453613, 38.218514137268066, 19.109257068634033, 9.554628534317017, 4.777314267158508, 2.388657133579254, 1.194328566789627, 0.5971642833948135, 0.29858214169740677, 0.14929107084870338];
@@ -142,7 +400,7 @@ function wrapper(plugin_info) {
                 for (var k = 0; k < bbox.length; k++) bbox[k] = Number(bbox[k]);
                 return bbox;
             }
-            $.ajax("http://wxs.ign.fr/" + key + "/autoconf/?output=json", {
+            $.ajax("https://wxs.ign.fr/choisirgeoportail/autoconf/?output=json", {
                 dataType: "jsonp",
                 success: function(resp, status) {
                     var xml = $.parseXML(resp.xml.replace(/xlink:|sld:|gpp:/g, ""));
@@ -292,9 +550,7 @@ function wrapper(plugin_info) {
                 L.setOptions(this, options);
 
                 // Calculate url
-                this._url = geoportailConfig.url + key + "/wmts?LAYER=" + layer + "&EXCEPTIONS=text/xml&FORMAT=" + this.options.format + "&SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&STYLE=" + this.options.style + "&TILEMATRIXSET=PM" + "&TILEMATRIX={z}&TILECOL={x}&TILEROW={y}";
-
-                //console.log(this.options);
+                this._url = geoportailConfig.url + key + "/geoportail/wmts?layer=" + layer + "&style=normal&tilematrixset=PM&Service=WMTS&Request=GetTile&Version=1.0.0&Format=" + encodeURI(this.options.format) + "&TILEMATRIX={z}&TILECOL={x}&TILEROW={y}";
             }
 
         });
@@ -310,11 +566,30 @@ function wrapper(plugin_info) {
 
         window.plugin.mapTileIGN.setupLeaflet();
 
-        var apiKey = "5zp5zdfb61pf7azeb1s1h60x";
+        var keyChoisir = "choisirgeoportail";
+        var keyOther = "";
+        var keyClassic = "";
 
-        var ign = L.tileLayer.geoportail(apiKey, "GEOGRAPHICALGRIDSYSTEMS.MAPS");
+        if (keyOther !== "") {
+            var ignScan = L.tileLayer.geoportail(keyOther, "GEOGRAPHICALGRIDSYSTEMS.MAPS");
+            layerChooser.addBaseLayer(ignScan, "IGN Cartes IGN");
 
-        layerChooser.addBaseLayer(ign, "IGN");
+            var ignScan = L.tileLayer.geoportail(keyOther, "GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD");
+            layerChooser.addBaseLayer(ignScan, "IGN Cartes SCAN Express Standard");
+        }
+
+        if (keyClassic !== "") {
+            var ignScan = L.tileLayer.geoportail(keyClassic, "GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.CLASSIQUE");
+            layerChooser.addBaseLayer(ignScan, "IGN Cartes SCAN Express Classique");
+        }
+
+        if (keyChoisir !== "") {
+            var ignOrtho = L.tileLayer.geoportail(keyChoisir, "ORTHOIMAGERY.ORTHOPHOTOS");
+            layerChooser.addBaseLayer(ignOrtho, "IGN Photographies aériennes");
+
+            var ign = L.tileLayer.geoportail(keyChoisir, "GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2");
+            layerChooser.addBaseLayer(ign, "IGN Plan IGN V2");
+        }
 
     };
 
