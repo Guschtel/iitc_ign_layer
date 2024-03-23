@@ -2,7 +2,7 @@
 // @name           IITC plugin: IGN map tiles
 // @id             iitc-plugin-basemap-ign
 // @category       Map Tiles
-// @version        0.5
+// @version        0.6
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @updateURL      https://github.com/Guschtel/iitc_ign_layer/raw/master/basemap-ign.meta.js
 // @downloadURL    https://github.com/Guschtel/iitc_ign_layer/raw/master/basemap-ign.user.js
